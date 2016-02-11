@@ -1,0 +1,105 @@
+---
+title: "Lab2"
+author: "Olivia Chen"
+date: "February 3, 2016"
+output: pdf_document
+Textbook: ISL, chapter 4 Problem 11
+Professor: Prof. Maslova
+---
+
+
+```{r, echo=FALSE, warning=FALSE}
+source("multiplot.R")
+library(ISLR)
+library(ggplot2)
+summary(Auto)
+mpg01 = rep(0, length(Auto$mpg))
+mpg01[Auto$mpg > median(Auto$mpg)] = 1
+Auto = data.frame(Auto, mpg01)
+pairs(Auto)
+p1<- ggplot(Auto, aes(x = as.factor(mpg01), y = displacement)) + geom_boxplot() + labs(x="mpg01", y = "displacement")
+p2 <- ggplot(Auto, aes(x = as.factor(mpg01), y = cylinders)) + geom_boxplot() + labs(x="mpg01", y = "cylinders")
+p3 <- ggplot(Auto, aes(x = as.factor(mpg01), y = horsepower)) + geom_boxplot() + labs(x="mpg01", y = "horsepower")
+p4 <- ggplot(Auto, aes(x = as.factor(mpg01), y = weight)) + geom_boxplot() + labs(x="mpg01", y = "weight")
+p5 <- ggplot(Auto, aes(x = as.factor(mpg01), y =acceleration)) + geom_boxplot() + labs(x="mpg01", y = "acceleration")
+p6 <- ggplot(Auto, aes(x = as.factor(mpg01), y =year)) + geom_boxplot() + labs(x="mpg01", y = "year")
+multiplot(p1, p2, p3, p4, p5,p6,cols=2)
+Auto$origin[Auto$origin == 1] <- "American"
+Auto$origin[Auto$origin == 2] <- "European"
+Auto$origin[Auto$origin == 3] <- "Japanese"
+ggplot(Auto, aes(as.factor(mpg01), ..count..)) + geom_bar(aes(fill = as.factor(origin)), position = "dodge")
+```
+
+
+**(b) It seems like displacemnet, cylinders, horsepower and weight all have some impact on mpg01, compared to them, the relationship between acceleration and mpg01 doesn't seem as obvious. Additionally, even though year is a catergorial data, but we can still see from the boxplot that year seems has some relationship with mpg01.**
+**(b)because we only have 3 catergories in the origin. We can see that a origin seems to have a significant relationship with mpg01**
+
+
+```{r, echo=FALSE,warning=FALSE}
+Auto$origin[Auto$origin ==  "American"] <- 1
+Auto$origin[Auto$origin == "European"] <- 2
+Auto$origin[Auto$origin == "Japanese"] <- 3
+train_size <- floor(0.70 * nrow(Auto))
+set.seed(123)
+train_ind <- sample(nrow(Auto), size = train_size)
+train <- Auto[train_ind, ]
+test <- Auto[-train_ind, ]
+```
+
+
+
+**(d) from (b), I think displacemnet, cylinders, horsepower, weight, origin and year seems most associated with mog01**
+
+```{r, echo=FALSE, eval=FALSE, warning=FALSE}
+library(MASS)
+lda.fit = lda(mpg01 ~ cylinders + weight + displacement + horsepower + origin, data = train)
+plot(lda.fit)
+lda.pred = predict(lda.fit, test)
+mean(lda.pred$class != test$mpg01)
+table(lda.pred$class ,test$mpg01)
+mean(lda.pred$class==test$mpg01)
+```
+
+** The maximum number of useful discriminant functions that can separate the mpg01 is the minimum of (number of class) - 1  and number of predictors, and so in this case it is the minimum of 1 and 6, which is 1.We can see from the histogram that the linear discriminant function seperate the two group decent, not great because they still have some overlap.The first LDA model I tried was with all the predictors I think it's mostly significant related to mpg01, which are displacemnet, cylinders, horsepower, weight, origin and year. And the test error turned out to be 12.7%, then I tired to eliminating the year, I got 11%, which is better. Then I tried to eliminating origin as well, which resulting a test error rate is 11.9%.**
+
+```{r, echo=FALSE, eval=FALSE,warning=FALSE}
+qda.fit = qda(mpg01 ~ cylinders + weight + displacement + horsepower + origin, data = train)
+qda.pred = predict(qda.fit, test)
+mean(qda.pred$class != test$mpg01)
+```
+
+
+**(e)For QDA, I started with all the variables I think it's most associated with mpg01 again, they are  displacemnet, cylinders, horsepower, weight, origin and year. The test error rate for that is 9.3%. Then I tried to remove the year, it gives me the same error rate as 9.3%. Then I remove both year and origin, I got 10.1%.**
+
+```{r, echo=FALSE, eval=FALSE,warning=FALSE}
+glm.fit = glm(mpg01 ~ cylinders + weight + displacement + horsepower + origin, data = train, family = binomial)
+glm.probs = predict(glm.fit, test, type = "response")
+glm.pred = rep(0, length(glm.probs))
+glm.pred[glm.probs > 0.5] = 1
+mean(glm.pred != test$mpg01)
+```
+
+
+**(f)For logistic, Similarily, I started from**
+*mpg01 ~ cylinders + weight + displacement + horsepower + year + origin*
+**and get 11% test error rate, then I moved to**
+*mpg01 ~ cylinders + weight + displacement + horsepower + origin*
+**Test error for a model with year is bettwe, 10.1%**
+
+```{r, echo=FALSE, eval=FALSE,warning=FALSE}
+library(class)
+attach(Auto)
+train.X = train[ ,c(2:5,8)]
+test.X = test[,c(2:5,8)]
+train.mpg01 = train[10][,1]
+set.seed(1)
+knn.pred = knn(train.X, test.X, train.mpg01, k = 1)
+mean(knn.pred != test$mpg01)
+knn.pred = knn(train.X, test.X, train.mpg01, k = 10)
+mean(knn.pred != test$mpg01)
+knn.pred = knn(train.X, test.X, train.mpg01, k = 100)
+mean(knn.pred != test$mpg01)
+```
+
+
+**(g)If we set the k=1, I got test error rate is 14.4%, and 12.7% test error rate for k =10. And of course, as the k increase, test error rate went back to 13.5%**

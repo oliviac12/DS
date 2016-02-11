@@ -1,0 +1,87 @@
+---
+title: "Lab 3"
+author: "Olivia Chen"
+date: "February 10, 2016"
+output: pdf_document
+Professor: Prof. Maslova
+Class: Data Analysis
+---
+
+
+
+```{r, echo=FALSE}
+library(ISLR)
+summary(Default)
+attach(Default)
+dim(Default)
+```
+
+**a. We can see that this dataframe has 10000 rows and 4 varivales, and that's the summary of the data set**
+
+```{r, echo=FALSE, eval=FALSE, warning=FALSE}
+#i.
+glm.fit = glm(default ~ income + balance, data = Default, family = binomial)
+#ii
+set.seed(10)
+train=sample(10000,8000)
+glm.fit = glm(default ~ income + balance, data = Default, family = binomial, 
+        subset = train)
+#iii
+glm.probs = predict(glm.fit, Default[-train, ], type = "response")
+glm.pred = rep("No", 2000)
+glm.pred[glm.probs > 0.5] = "Yes"
+#iv
+mean(glm.pred != Default[-train, ]$default)
+```
+
+**b. I splited the data into 80% training data and 20% validation data. The validation set error I got is 0.0315**
+
+
+```{r, echo=FALSE, eval=FALSE, warning=FALSE}
+
+#ii
+set.seed(20)
+train=sample(10000,8000)
+glm.fit = glm(default ~ income + balance, data = Default, family = binomial, 
+        subset = train)
+#iii
+glm.probs = predict(glm.fit, Default[-train, ], type = "response")
+glm.pred = rep("No", 2000)
+glm.pred[glm.probs > 0.5] = "Yes"
+#iv
+mean(glm.pred != Default[-train, ]$default)
+set.seed(40)
+train=sample(10000,8000)
+glm.fit = glm(default ~ income + balance, data = Default, family = binomial, 
+        subset = train)
+#iii
+glm.probs = predict(glm.fit, Default[-train, ], type = "response")
+glm.pred = rep("No", 2000)
+glm.pred[glm.probs > 0.5] = "Yes"
+#iv
+mean(glm.pred != Default[-train, ]$default)
+set.seed(45)
+train=sample(10000,8000)
+glm.fit = glm(default ~ income + balance, data = Default, family = binomial, 
+        subset = train)
+#iii
+glm.probs = predict(glm.fit, Default[-train, ], type = "response")
+glm.pred = rep("No", 2000)
+glm.pred[glm.probs > 0.5] = "Yes"
+#iv
+mean(glm.pred != Default[-train, ]$default)
+```
+
+**c. When we set seed equals 20, and I splited the data into 80% training data and 20% validation data. The validation set error I got is 0.0275. Then I set the seed equals 40, the validation set error is 0.0265. Then I tried setting the seed = 45, I got test error rate is 0.031. Overall, my average test error rate is 0.0275**
+
+
+
+```{r, echo=FALSE, eval=FALSE, warning=FALSE}
+glm.fit = glm(default ~ income + balance + student, data = Default, family = binomial, 
+    subset = train)
+glm.pred = rep("No", 2000)
+glm.probs = predict(glm.fit, Default[-train, ], type = "response")
+glm.pred[glm.probs > 0.5] = "Yes"
+mean(glm.pred != Default[-train, ]$default)
+```
+**d. after adding student dummy variable into the logistic logistic, , the test error rate is 0.0265.I don't think there's a reduction in the test error rate**
