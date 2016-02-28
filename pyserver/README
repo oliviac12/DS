@@ -1,0 +1,10 @@
+Transporation and access to health care 
+
+Transportation decisions affect our individual lives in various aspects and our team decided to focus on the public heatlh aspect which is often less emphasized than other factors.The team has discussed about the relationship between public health and transportation, and how can it increase access to health care. Underserved communities that we are targeting are often left wihtout many choices for modes of transportation and this lack of choices becomes even worse in suburbs where it is impossible to get around without automobiles. 
+
+Our research question is how to link public transit with Uber for these communities be most effective.On top of the expenses to receive the health care, we want to take the transportation costs, inform users and help them make more informative decisions.
+
+In order to provide with these information, our team created data visualizations using JavaScript. The visualization was created with map layers usingd datasets on hospitals, bus stops, affordability index, and fare estimates. 
+
+
+This project can be further investigated by identifying areas that are not public transit accessible and where and how Uber can be most utilized to help users get from point A to B wtih fare estimates. Potentially this can not only improve overall efficiency in health care access and improving scheduling strategies at the health care site. 
