@@ -43,7 +43,7 @@ border-radius:3px;
   Mousemove: <code id='mousemove'></code><br/>
 </div>
 
-<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<!-- <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script> -->
 <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
 <!-- following are the scripts that using to map the basemap, and tracts, and primary care location -->
 <script src="us-states.js"></script>
@@ -51,6 +51,7 @@ border-radius:3px;
 <script src="neigh.js"></script>
 <!-- <script src="LAI.js"></script> -->
 <script src="dc_tracts.js"></script>
+<script src="lai.js"></script>
 <!-- <script src="Countries.js"></script> -->
 
 <script>
@@ -77,7 +78,30 @@ border-radius:3px;
             click: zoomToFeature
         });
     }
+    function getcolor(a){
+      // for (var j=0; j < dcTracts.length; j++){
+        for (var i=0; i < lai.length; i++){
+          if (a.properties.id === lai[i].tracts){
+              return lai[i].ht_rent > 80 ? '#dd1c77' :
+                     lai[i].ht_rent > 60 ? '#1c9099' :
+                     lai[i].ht_rent > 40 ? '#756bb1' :
+                                           '#31a354' ;
+                            }
 
+        }
+      }
+      function style(a) {
+        console.log(a)
+          return {
+              fillColor: getcolor(a),
+              weight: 2,
+              opacity: 1,
+              color: 'white',
+              dashArray: '3',
+              fillOpacity: 0.7
+          };
+      }
+    // }
     //    L.geoJson(usStates).addTo(map);
 // add data layer to the Map
     geojson = L.geoJson(primaryCare, {
@@ -85,20 +109,21 @@ border-radius:3px;
         onEachFeature: onEachFeature
     }).addTo(map);
 
-    neighbor_geojson = L.geoJson(neighborhoods, {
-//        style: style,
-//        onEachFeature: onEachFeature
-    }).addTo(map);
+//     neighbor_geojson = L.geoJson(neighborhoods, {
+// //        style: style,
+// //        onEachFeature: onEachFeature
+//     }).addTo(map);
 
     tracts_geojson = L.geoJson(dcTracts, {
-//        style: style,
+      style: style,
 //        onEachFeature: onEachFeature
     }).addTo(map);
 
-    tracts_geojson = L.geoJson(aff, {
+    // tracts_geojson = L.geoJson(aff, {
 //        style: style,
 //        onEachFeature: onEachFeature
-    }).addTo(map);
+    // }).addTo(map);
+
 
 
     //    L.marker([51.5, -0.09]).addTo(map)
