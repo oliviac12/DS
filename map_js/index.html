@@ -24,26 +24,19 @@
 <body>
 <!-- a small window shows on the top right corner tells you what's the coordinates of mouse position,
 could be removed, just to test if I can get coordinate while moving the mouse-->
-<style>
-.ui-control {
-background:#fff;
-position:absolute;
-top:10px;
-right:10px;
-padding:10px;
-z-index:100;
-border-radius:3px;
-}
-</style>
+
 
 <div id="map" style=""></div>
 
-<div id='output' class='ui-control'>
+
+
+
+ <div id='output' class='ui-control'>
   Click: <code id='click'></code><br/>
   Mousemove: <code id='mousemove'></code><br/>
 </div>
 
-<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<!-- <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script> -->
 <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
 <!-- following are the scripts that using to map the basemap, and tracts, and primary care location -->
 <script src="us-states.js"></script>
@@ -51,10 +44,13 @@ border-radius:3px;
 <script src="neigh.js"></script>
 <!-- <script src="LAI.js"></script> -->
 <script src="dc_tracts.js"></script>
+<script src="lai.js"></script>
+<script src="control.js"></script>
 <!-- <script src="Countries.js"></script> -->
 
 <script>
     var map = L.map('map').setView([38.9, -77.0], 11);
+    //map.on('click', function(e) { alert('hi')});
 // get access to mapbox function
     L.tileLayer('http://{s}.tiles.mapbox.com/v3/spatialdev.map-c9z2cyef/{z}/{x}/{y}.png', {
         maxZoom: 18,
@@ -65,6 +61,7 @@ border-radius:3px;
     }).addTo(map);
 
     function zoomToFeature(e) {
+      map.fitBounds(e.target.getBounds());
         // console.log(e.target.feature.properties.facility_type)
         popup
                 .setLatLng(e.latlng)
@@ -74,31 +71,76 @@ border-radius:3px;
 
     function onEachFeature(feature, layer) {
         layer.on({
-            click: zoomToFeature
+          mouseover: highlightFeature,
+          mouseout: resetHighlight,
+          click: function(e) {zoomToFeature(e); onMapClick(e)}
         });
     }
+    function getcolor(a){
+      // for (var j=0; j < dcTracts.length; j++){
+        for (var i=0; i < lai.length; i++){
+          if (a.properties.id === lai[i].tracts){
+              return lai[i].ht_rent > 80 ? '#dd1c77' :
+                      lai[i].ht_rent > 70 ? '#d8b365':
+                     lai[i].ht_rent > 60 ? '#1c9099' :
+                     lai[i].ht_rent > 50 ? '#e34a33' :
+                     lai[i].ht_rent > 40 ? '#31a354':
+                                          '#e34a33' ;
+                            }
 
+        }
+      }
+      function style(a) {
+          return {
+              fillColor: getcolor(a),
+              weight: 2,
+              opacity: 0.4,
+              color: 'white',
+              dashArray: '3',
+              fillOpacity: 0.6
+          };
+      }
+      function highlightFeature(e) {
+    var layer = e.target;
+
+    layer.setStyle({
+        weight: 5,
+        color: '#f03b20',
+        dashArray: '',
+        fillOpacity: 0.7
+    });
+
+    if (!L.Browser.ie && !L.Browser.opera) {
+        layer.bringToFront();
+    }
+}
+function resetHighlight(e) {
+  tracts_geojson.resetStyle(e.target);
+}
+
+    // }
     //    L.geoJson(usStates).addTo(map);
 // add data layer to the Map
     geojson = L.geoJson(primaryCare, {
 //        style: style,
+        // onEachFeature: onEachFeature
+    }).addTo(map);
+
+//     neighbor_geojson = L.geoJson(neighborhoods, {
+// //        style: style,
+// //        onEachFeature: onEachFeature
+//     }).addTo(map);
+
+    tracts_geojson = L.geoJson(dcTracts, {
+      style: style,
         onEachFeature: onEachFeature
     }).addTo(map);
 
-    neighbor_geojson = L.geoJson(neighborhoods, {
+    // tracts_geojson = L.geoJson(aff, {
 //        style: style,
 //        onEachFeature: onEachFeature
-    }).addTo(map);
+    // }).addTo(map);
 
-    tracts_geojson = L.geoJson(dcTracts, {
-//        style: style,
-//        onEachFeature: onEachFeature
-    }).addTo(map);
-
-    tracts_geojson = L.geoJson(aff, {
-//        style: style,
-//        onEachFeature: onEachFeature
-    }).addTo(map);
 
 
     //    L.marker([51.5, -0.09]).addTo(map)
@@ -120,18 +162,21 @@ border-radius:3px;
     var popup = L.popup();
     var click = document.getElementById('click'),
     mousemove = document.getElementById('mousemove');
-    map.on('mousemove click', function(e) {
-    window[e.type].innerHTML = e.containerPoint.toString() + ', ' + e.latlng.toString();
-});
+//     map.on('mousemove click', function(e) {
+//     window[e.type].innerHTML = e.containerPoint.toString() + ', ' + e.latlng.toString();
+// });
     //
-    // function onMapClick(e) {
-    //     popup
-    //             .setLatLng(e.latlng)
-    //             .setContent("You clicked the map at " + e.latlng.toString())
-    //             .openOn(map);
-    // }
+    var popup = L.popup();
 
-    // map.on('click', onMapClick);
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(map);
+}
+
+map.on('click', onMapClick);
+
 
 
 </script>
