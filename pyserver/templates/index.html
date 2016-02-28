@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
         
-
+        <script src="{{ url_for('static', filename='lai.js') }}"></script>
         <script src="{{ url_for('static', filename='script.js') }}"></script>   
         <script src="{{ url_for('static', filename='us-states.js') }}"></script>
         <script src="{{ url_for('static', filename='dc_tracts.js') }}"></script>
@@ -15,9 +15,7 @@
         <script src="{{ url_for('static', filename='neighborhoods.js') }}"></script>
         <script src="{{ url_for('static', filename='primary.js') }}"></script>
         <script src="{{ url_for('static', filename='tracts.js') }}"></script>
-<!--        <script src="{{ url_for('static', filename='LAI.csv') }}"></script>-->
-<!--        <script src="{{ url_for('static', filename='lai.json') }}"></script> -->
-        <script src="{{ url_for('static', filename='lai.js') }}"></script>
+
     
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
 
@@ -115,6 +113,7 @@ could be removed, just to test if I can get coordinate while moving the mouse-->
     }
     function getcolor(a){
       // for (var j=0; j < dcTracts.length; j++){
+        console.log(lai)
         for (var i=0; i < lai.length; i++){
           if (a.properties.id === lai[i].tracts){
               return lai[i].ht_rent > 80 ? '#dd1c77' :
