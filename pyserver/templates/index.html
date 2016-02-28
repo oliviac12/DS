@@ -113,9 +113,11 @@ could be removed, just to test if I can get coordinate while moving the mouse-->
     }
     function getcolor(a){
       // for (var j=0; j < dcTracts.length; j++){
-        console.log(lai)
+
         for (var i=0; i < lai.length; i++){
-          if (a.properties.id === lai[i].tracts){
+            fake_naum = Math.random()
+          if (String(a.properties.id) === String(lai[i].tracts)){
+            console.log("HERE")
               return lai[i].ht_rent > 80 ? '#dd1c77' :
                       lai[i].ht_rent > 70 ? '#d8b365':
                      lai[i].ht_rent > 60 ? '#1c9099' :
