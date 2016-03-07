@@ -18,6 +18,19 @@
         height:100%;
         width:100%;
     }
+    .info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+  .info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+
 
 </style>
 
@@ -45,7 +58,6 @@ could be removed, just to test if I can get coordinate while moving the mouse-->
 <!-- <script src="LAI.js"></script> -->
 <script src="dc_tracts.js"></script>
 <script src="lai.js"></script>
-<script src="control.js"></script>
 <!-- <script src="Countries.js"></script> -->
 
 <script>
@@ -80,6 +92,7 @@ could be removed, just to test if I can get coordinate while moving the mouse-->
       // for (var j=0; j < dcTracts.length; j++){
         for (var i=0; i < lai.length; i++){
           if (a.properties.id === lai[i].tracts){
+            console.log(lai)
               return lai[i].ht_rent > 80 ? '#dd1c77' :
                       lai[i].ht_rent > 70 ? '#d8b365':
                      lai[i].ht_rent > 60 ? '#1c9099' :
@@ -100,22 +113,23 @@ could be removed, just to test if I can get coordinate while moving the mouse-->
               fillOpacity: 0.6
           };
       }
-      function highlightFeature(e) {
+    function highlightFeature(e) {
     var layer = e.target;
-
     layer.setStyle({
         weight: 5,
         color: '#f03b20',
         dashArray: '',
         fillOpacity: 0.7
-    });
+    })
 
     if (!L.Browser.ie && !L.Browser.opera) {
         layer.bringToFront();
     }
+    info.update(layer.tracts);
 }
 function resetHighlight(e) {
   tracts_geojson.resetStyle(e.target);
+  info.update();
 }
 
     // }
@@ -141,24 +155,21 @@ function resetHighlight(e) {
 //        onEachFeature: onEachFeature
     // }).addTo(map);
 
+    var info = L.control();
 
+    info.onAdd = function (map) {
+        this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+        this.update();
+        return this._div;
+    };
 
-    //    L.marker([51.5, -0.09]).addTo(map)
-//            .bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-//
-//    L.circle([51.508, -0.11], 500, {
-//        color: 'red',
-//        fillColor: '#f03',
-//        fillOpacity: 0.5
-//    }).addTo(map).bindPopup("I am a circle.");
-//
-//    L.polygon([
-//        [51.509, -0.08],
-//        [51.503, -0.06],
-//        [51.51, -0.047]
-//    ]).addTo(map).bindPopup("I am a polygon.");
+    info.update = function (props) {
+        this._div.innerHTML = '<h4> housing and transportation costs as a percent of income for renters</h4>' +
+        (props ? '<b>' + props.tracts + '</b><br />' + props.ht_rent + '%'
+            : 'Hover over a state');
+    };
 
-// getting the mouse move coordinates
+    info.addTo(map);
     var popup = L.popup();
     var click = document.getElementById('click'),
     mousemove = document.getElementById('mousemove');
