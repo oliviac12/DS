@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Python &raquo; Dashboards</title>
+  <link rel="shortcut icon" href="https://plot.ly/gh-pages/documentation/static//images/plotly-ico.png" />
+  <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="static/css/keen-dashboards.css" />
+  <!-- For slider -->
+  <link rel="stylesheet" type="text/css" href="static/css/iThing.css" />
+</head>
+<body class="application">
+
+  <!-- 
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="navbar-brand" href="./">Python &raquo; Dashboards</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="http://moderndata.plot.ly/update-plotly-charts-with-cron-jobs-and-python/">Cron Jobs</a></li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Streaming API <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="https://plot.ly/python/streaming-tutorial/">Python</a></li>
+              <li><a href="https://plot.ly/matlab/streaming-tutorial/">MATLAB</a></li>
+              <li><a href="https://github.com/plotly/plotly-nodejs">node.js</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">REST API <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="https://plot.ly/python/sending-data-to-charts/#overwrite-chart-data-with-new-data">Overwrite a chart's data</a></li>
+              <li><a href="https://plot.ly/python/sending-data-to-charts/#add-data-to-an-existing-trace">Adding data to an exisitng trace</a></li>
+              <li><a href="https://plot.ly/python/sending-data-to-charts/#add-new-traces-to-a-chart">Adding new traces to a chart</a></li>
+            </ul>
+          </li>
+
+          <li><a href="http://stackoverflow.com/questions/tagged/plotly?sort=newest&pageSize=15">Technical Support</a></li>         
+          <li><a href="https://Download">Download Template</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+ -->
+
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Market Share by Country
+          </div>
+          <div class="chart-stage">
+            <div id="grid-1-1">
+              <div>
+                <iframe width="100%" height="480px" frameborder="0" scrolling="no" src="https://plot.ly/~oliviac12/2/non-sharethrough-vs-sharesthrough.embed"></iframe>
+              </div>
+            </div>
+          </div>
+          <!-- 
+<div class="chart-notes">
+            Stream live data to charts with <a href="https://plot.ly/python/streaming-tutorial/">Python</a>, <a href="https://plot.ly/matlab/streaming-tutorial/">MATLAB</a>, or <a href="https://github.com/plotly/plotly-nodejs">Node.js</a>.
+          </div>
+ -->
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Engagement Rate Head Map cross Difference Categories
+          </div>
+          <div class="chart-stage">
+            <iframe width="100%" height="480px" frameborder="0" scrolling="no" src="https://plot.ly/~oliviac12/10.embed"></iframe>
+          </div>
+          <!-- 
+<div class="chart-notes">
+            Make a <a href="https://plot.ly/javascript-graphing-library/bar-charts/">bar chart</a> in Python
+          </div>
+ -->
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6 col-md-12">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Sankey Diagram Engagement Exploration
+          </div>
+          <div class="chart-stage">
+            <!-- <iframe width="100%" height="480px" frameborder="0" scrolling="no" src="https://plot.ly/~jackp/10002.embed"></iframe> -->
+            <svg width="1200" height="820" xmlns="http://www.w3.org/2000/svg"><g transform="translate(0,10)"><g><path class="link" d="M5,263.6372515116209C151.875,263.6372515116209 151.875,283.6372515116209 298.75,283.6372515116209" style="stroke-width: 367.2745030232417px; fill: none; stroke: #69bf69; stroke-opacity: 0.4;"></path><path class="link" d="M303.75,255.79590384464873C450.625,255.79590384464873 450.625,245.79590384464873 597.5,245.79590384464873" style="stroke-width: 311.59180768929747px; fill: none; stroke: #69bfbf; stroke-opacity: 0.4;"></path><path class="link" d="M602.5,171.11435586050402C749.375,171.11435586050402 749.375,181.11435586050402 896.25,181.11435586050402" style="stroke-width: 162.22871172100804px; fill: none; stroke: #69a2bf; stroke-opacity: 0.4;"></path><path class="link" d="M602.5,329.6730413872997C749.375,329.6730413872997 749.375,500.0258001057982 896.25,500.0258001057982" style="stroke-width: 154.88865933258325px; fill: none; stroke: #69a2bf; stroke-opacity: 0.4;"></path><path class="link" d="M602.5,558.391487186262C749.375,558.391487186262 749.375,316.0926522431049 896.25,316.0926522431049" style="stroke-width: 107.72788104419378px; fill: none; stroke: #6969bf; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,148.57862954145418C1048.125,148.57862954145418 1048.125,48.57862954145424 1195,48.57862954145424" style="stroke-width: 97.15725908290837px; fill: none; stroke: #bf69bf; stroke-opacity: 0.4;"></path><path class="link" d="M5,492.5186548419882C151.875,492.5186548419882 151.875,574.8408752941228 298.75,574.8408752941228" style="stroke-width: 90.48830363749298px; fill: none; stroke: #69bf69; stroke-opacity: 0.4;"></path><path class="link" d="M602.5,450.8224588588782C749.375,450.8224588588782 749.375,650.6202877200267 896.25,650.6202877200267" style="stroke-width: 87.41017561057383px; fill: none; stroke: #69a2bf; stroke-opacity: 0.4;"></path><path class="link" d="M303.75,446.8028267990273C450.625,446.8028267990273 450.625,539.738565773895 597.5,539.738565773895" style="stroke-width: 70.42203821945965px; fill: none; stroke: #69bfbf; stroke-opacity: 0.4;"></path><path class="link" d="M303.75,558.7563605198433C450.625,558.7563605198433 450.625,430.75144473376434 597.5,430.75144473376434" style="stroke-width: 58.31927408893377px; fill: none; stroke: #69bf86; stroke-opacity: 0.4;"></path><path class="link" d="M5,566.6216654279137C151.875,566.6216654279137 151.875,665.8409402384513 298.75,665.8409402384513" style="stroke-width: 57.717717534358044px; fill: none; stroke: #69bf69; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,501.4801117708542C1048.125,501.4801117708542 1048.125,260.7852851694354 1195,260.7852851694354" style="stroke-width: 41.18931937788884px; fill: none; stroke: #bf6986; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,461.0353735658821C1048.125,461.0353735658821 1048.125,175.5444360750757 1195,175.5444360750757" style="stroke-width: 39.7001570320553px; fill: none; stroke: #bf6986; stroke-opacity: 0.4;"></path><path class="link" d="M602.5,651.912552184433C749.375,651.912552184433 749.375,389.79677143426494 896.25,389.79677143426494" style="stroke-width: 39.680357338126264px; fill: none; stroke: #6986bf; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,541.9106038545847C1048.125,541.9106038545847 1048.125,339.78995505519447 1195,339.78995505519447" style="stroke-width: 39.67166478957205px; fill: none; stroke: #bf6986; stroke-opacity: 0.4;"></path><path class="link" d="M303.75,654.2903139142392C450.625,654.2903139142392 450.625,477.21931422119815 597.5,477.21931422119815" style="stroke-width: 34.616464885933894px; fill: none; stroke: #69bfa2; stroke-opacity: 0.4;"></path><path class="link" d="M303.75,498.4860644458667C450.625,498.4860644458667 450.625,648.5445920524795 597.5,648.5445920524795" style="stroke-width: 32.94443707421915px; fill: none; stroke: #69bfbf; stroke-opacity: 0.4;"></path><path class="link" d="M5,621.62097712905C151.875,621.62097712905 151.875,483.4149559571989 298.75,483.4149559571989" style="stroke-width: 32.280905867914335px; fill: none; stroke: #a2bf69; stroke-opacity: 0.4;"></path><path class="link" d="M303.75,601.5748083726006C450.625,601.5748083726006 450.625,588.6083956919152 597.5,588.6083956919152" style="stroke-width: 27.317621616580897px; fill: none; stroke: #69bf86; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,320.1259142856984C1048.125,320.1259142856984 1048.125,535.8317453427425 1195,535.8317453427425" style="stroke-width: 26.013578360327784px; fill: none; stroke: #bf69bf; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,251.49252890438916C1048.125,251.49252890438916 1048.125,404.11033486294815 1195,404.11033486294815" style="stroke-width: 25.27100935142819px; fill: none; stroke: #bf69bf; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,208.88986552083406C1048.125,208.88986552083406 1048.125,143.96175112112235 1195,143.96175112112235" style="stroke-width: 23.465212875851424px; fill: none; stroke: #bf69bf; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,646.9080865680141C1048.125,646.9080865680141 1048.125,292.9908556165466 1195,292.9908556165466" style="stroke-width: 23.2218215163335px; fill: none; stroke: #bf69a2; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,624.3402183572638C1048.125,624.3402183572638 1048.125,206.35147204368707 1195,206.35147204368707" style="stroke-width: 21.913914905167402px; fill: none; stroke: #bf69a2; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,669.4435186948077C1048.125,669.4435186948077 1048.125,370.55030881860716 1195,370.55030881860716" style="stroke-width: 21.849042737253566px; fill: none; stroke: #bf69a2; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,296.3694205467202C1048.125,296.3694205467202 1048.125,494.00244956684367 1195,494.00244956684367" style="stroke-width: 21.49940911762861px; fill: none; stroke: #bf69bf; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,274.87387478400456C1048.125,274.87387478400456 1048.125,452.19190715958496 1195,452.19190715958496" style="stroke-width: 21.491682407802646px; fill: none; stroke: #bf69bf; stroke-opacity: 0.4;"></path><path class="link" d="M303.75,681.5011298647881C450.625,681.5011298647881 450.625,612.1697900077878 597.5,612.1697900077878" style="stroke-width: 19.805167015164223px; fill: none; stroke: #69bfa2; stroke-opacity: 0.4;"></path><path class="link" d="M5,662.3971867449183C151.875,662.3971867449183 151.875,509.3651913942659 298.75,509.3651913942659" style="stroke-width: 19.61956500621967px; fill: none; stroke: #bf8669; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,431.88338274468055C1048.125,431.88338274468055 1048.125,106.45917138808238 1195,106.45917138808238" style="stroke-width: 18.603824610347907px; fill: none; stroke: #bf6986; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,341.37291754901213C1048.125,341.37291754901213 1048.125,567.281252792745 1195,567.281252792745" style="stroke-width: 16.480428166299667px; fill: none; stroke: #bf69bf; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,569.0303090184358C1048.125,569.0303090184358 1048.125,424.0297123077274 1195,424.0297123077274" style="stroke-width: 14.567745538130369px; fill: none; stroke: #bf6986; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,227.06356995086986C1048.125,227.06356995086986 1048.125,233.74952748838086 1195,233.74952748838086" style="stroke-width: 12.882195984220193px; fill: none; stroke: #bf69bf; stroke-opacity: 0.4;"></path><path class="link" d="M303.75,620.2931653588064C450.625,620.2931653588064 450.625,670.0763567675044 597.5,670.0763567675044" style="stroke-width: 10.11909235583053px; fill: none; stroke: #69bf86; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,388.4763089196316C1048.125,388.4763089196316 1048.125,679.3435543864347 1195,679.3435543864347" style="stroke-width: 9.883266733017196px; fill: none; stroke: #bf69bf; stroke-opacity: 0.4;"></path><path class="link" d="M602.5,617.0473560719894C749.375,617.0473560719894 749.375,582.2620581357204 896.25,582.2620581357204" style="stroke-width: 9.58385672726102px; fill: none; stroke: #6969bf; stroke-opacity: 0.4;"></path><path class="link" d="M602.5,676.5271936334575C749.375,676.5271936334575 749.375,591.8284492793122 896.25,591.8284492793122" style="stroke-width: 9.5489255599228px; fill: none; stroke: #6986bf; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,378.9629584195325C1048.125,378.9629584195325 1048.125,658.6315980245826 1195,658.6315980245826" style="stroke-width: 9.143434267180966px; fill: none; stroke: #bf69bf; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,354.1296349851211C1048.125,354.1296349851211 1048.125,590.8465382175171 1195,590.8465382175171" style="stroke-width: 9.033006705918204px; fill: none; stroke: #bf69bf; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,370.1643285783353C1048.125,370.1643285783353 1048.125,635.8945997958419 1195,635.8945997958419" style="stroke-width: 8.453825415213513px; fill: none; stroke: #bf69bf; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,684.5129369657011C1048.125,684.5129369657011 1048.125,469.24032898465384 1195,469.24032898465384" style="stroke-width: 8.024832046751035px; fill: none; stroke: #bf69a2; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,362.2917771044044C1048.125,362.2917771044044 1048.125,612.6922282732082 1195,612.6922282732082" style="stroke-width: 7.291277532648402px; fill: none; stroke: #bf69bf; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,610.14923040971C1048.125,610.14923040971 1048.125,118.99511418822647 1195,118.99511418822647" style="stroke-width: 6.46806098994029px; fill: none; stroke: #bf69a2; stroke-opacity: 0.4;"></path><path class="link" d="M303.75,694.4865901063699C450.625,694.4865901063699 450.625,678.2187796794193 597.5,678.2187796794193" style="stroke-width: 6.165753467999376px; fill: none; stroke: #69bfa2; stroke-opacity: 0.4;"></path><path class="link" d="M602.5,696.9669444470657C749.375,696.9669444470657 749.375,697.2792323025318 896.25,697.2792323025318" style="stroke-width: 5.4415353949364516px; fill: none; stroke: #8669bf; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,581.2957364881105C1048.125,581.2957364881105 1048.125,507.4435442284754 1195,507.4435442284754" style="stroke-width: 5.382780205634837px; fill: none; stroke: #bf6986; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,236.18084608582754C1048.125,236.18084608582754 1048.125,317.27794451756085 1195,317.27794451756085" style="stroke-width: 5.3523562856950955px; fill: none; stroke: #bf69bf; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,403.3492594958876C1048.125,403.3492594958876 1048.125,728.822750830816 1195,728.822750830816" style="stroke-width: 4.770116505684294px; fill: none; stroke: #bf69bf; stroke-opacity: 0.4;"></path><path class="link" d="M303.75,517.2775032291763C450.625,517.2775032291763 450.625,693.6208766596191 597.5,693.6208766596191" style="stroke-width: 4.638440492400126px; fill: none; stroke: #69bfbf; stroke-opacity: 0.4;"></path><path class="link" d="M5,677.5490232539552C151.875,677.5490232539552 151.875,697.9849384666368 298.75,697.9849384666368" style="stroke-width: 4.018211055744992px; fill: none; stroke: #bf8669; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,399.0553014832285C1048.125,399.0553014832285 1048.125,713.1965792656632 1195,713.1965792656632" style="stroke-width: 3.8177995196340024px; fill: none; stroke: #bf69bf; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,395.2821720047758C1048.125,395.2821720047758 1048.125,696.3519216582678 1195,696.3519216582678" style="stroke-width: 3.7284594372712725px; fill: none; stroke: #bf69bf; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,407.5587066198253C1048.125,407.5587066198253 1048.125,743.1147771660186 1195,743.1147771660186" style="stroke-width: 3.6487777421909997px; fill: none; stroke: #bf69bf; stroke-opacity: 0.4;"></path><path class="link" d="M5,639.5364001858408C151.875,639.5364001858408 151.875,621.859997235703 298.75,621.859997235703" style="stroke-width: 3.5499402456671865px; fill: none; stroke: #a2bf69; stroke-opacity: 0.4;"></path><path class="link" d="M5,673.8734434870554C151.875,673.8734434870554 151.875,625.3014415975639 298.75,625.3014415975639" style="stroke-width: 3.3329484780546452px; fill: none; stroke: #bf8669; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,593.5511031376992C1048.125,593.5511031376992 1048.125,699.7519154413748 1195,699.7519154413748" style="stroke-width: 3.0715281289428007px; fill: none; stroke: #bf6986; stroke-opacity: 0.4;"></path><path class="link" d="M602.5,692.7739165815083C749.375,692.7739165815083 749.375,411.10921027141734 896.25,411.10921027141734" style="stroke-width: 2.944520336178487px; fill: none; stroke: #8669bf; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,587.7734558653332C1048.125,587.7734558653332 1048.125,617.7884763227969 1195,617.7884763227969" style="stroke-width: 2.9012185665288035px; fill: none; stroke: #bf6986; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,689.8703639047195C1048.125,689.8703639047195 1048.125,511.4799452469357 1195,511.4799452469357" style="stroke-width: 2.690021831285737px; fill: none; stroke: #bf69a2; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,694.7885756820682C1048.125,694.7885756820682 1048.125,620.4533863471482 1195,620.4533863471482" style="stroke-width: 2.428601482173892px; fill: none; stroke: #bf69a2; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,692.3948248806718C1048.125,692.3948248806718 1048.125,597.8671394465746 1195,597.8671394465746" style="stroke-width: 2.358900120618825px; fill: none; stroke: #bf69a2; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,697.1820045372217C1048.125,697.1820045372217 1048.125,642.8807527769254 1195,642.8807527769254" style="stroke-width: 2.358256228133328px; fill: none; stroke: #bf69a2; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,577.4592640863971C1048.125,577.4592640863971 1048.125,464.0828306623823 1195,464.0828306623823" style="stroke-width: 2.2901645977920038px; fill: none; stroke: #bf6986; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,410.47875904155484C1048.125,410.47875904155484 1048.125,756.0451318675161 1195,756.0451318675161" style="stroke-width: 2.1913271012681905px; fill: none; stroke: #bf69bf; stroke-opacity: 0.4;"></path><path class="link" d="M303.75,698.6285894924517C450.625,698.6285894924517 450.625,698.6285894924517 597.5,698.6285894924517" style="stroke-width: 2.1182453041642635px; fill: none; stroke: #69bfa2; stroke-opacity: 0.4;"></path><path class="link" d="M303.75,626.1673965039969C450.625,626.1673965039969 450.625,696.7547818730944 597.5,696.7547818730944" style="stroke-width: 1.6293699345505492px; fill: none; stroke: #69bf86; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,590.0141212283025C1048.125,590.0141212283025 1048.125,640.9115685831537 1195,640.9115685831537" style="stroke-width: 1.580112159410017px; fill: none; stroke: #bf6986; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,595.9030814140989C1048.125,595.9030814140989 1048.125,767.9837311682267 1195,767.9837311682267" style="stroke-width: 1.3339842568287297px; fill: none; stroke: #bf6986; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,699.2171877107569C1048.125,699.2171877107569 1048.125,715.771585801727 1195,715.771585801727" style="stroke-width: 1.3322135524936125px; fill: none; stroke: #bf69a2; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,585.6605226741742C1048.125,585.6605226741742 1048.125,596.0253654783706 1195,596.0253654783706" style="stroke-width: 1.324647815789021px; fill: none; stroke: #bf6986; stroke-opacity: 0.4;"></path><path class="link" d="M5,641.9493872752413C151.875,641.9493872752413 151.875,695.3378159721972 298.75,695.3378159721972" style="stroke-width: 1.2760339331339856px; fill: none; stroke: #a2bf69; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,591.3085060972733C1048.125,591.3085060972733 1048.125,663.7076439474387 1195,663.7076439474387" style="stroke-width: 1.0086575785312923px; fill: none; stroke: #bf6986; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,584.5939147719482C1048.125,584.5939147719482 1048.125,575.9257508702265 1195,575.9257508702265" style="stroke-width: 1px; fill: none; stroke: #bf6986; stroke-opacity: 0.4;"></path><path class="link" d="M5,689.7561257211181C151.875,689.7561257211181 151.875,519.3729708366661 298.75,519.3729708366661" style="stroke-width: 1px; fill: none; stroke: #bfa269; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,411.8369697531504C1048.125,411.8369697531504 1048.125,778.8487202359315 1195,778.8487202359315" style="stroke-width: 1px; fill: none; stroke: #bf69bf; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,412.2070469591899C1048.125,412.2070469591899 1048.125,789.445447596866 1195,789.445447596866" style="stroke-width: 1px; fill: none; stroke: #bf69bf; stroke-opacity: 0.4;"></path><path class="link" d="M303.75,699.843856072267C450.625,699.843856072267 450.625,709.8438560722669 597.5,709.8438560722669" style="stroke-width: 1px; fill: none; stroke: #69bfa2; stroke-opacity: 0.4;"></path><path class="link" d="M602.5,709.8438560722669C749.375,709.8438560722669 749.375,596.7590559870067 896.25,596.7590559870067" style="stroke-width: 1px; fill: none; stroke: #a269bf; stroke-opacity: 0.4;"></path><path class="link" d="M602.5,621.9558289754949C749.375,621.9558289754949 749.375,694.4419200651886 896.25,694.4419200651886" style="stroke-width: 1px; fill: none; stroke: #6969bf; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,591.9140869798833C1048.125,591.9140869798833 1048.125,684.3864398462877 1195,684.3864398462877" style="stroke-width: 1px; fill: none; stroke: #bf6986; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,584.0883786842724C1048.125,584.0883786842724 1048.125,548.9397866162508 1195,548.9397866162508" style="stroke-width: 1px; fill: none; stroke: #bf6986; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,412.4802988327227C1048.125,412.4802988327227 1048.125,799.8988283932166 1195,799.8988283932166" style="stroke-width: 1px; fill: none; stroke: #bf69bf; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,698.4561067928992C1048.125,698.4561067928992 1048.125,664.3069468783151 1195,664.3069468783151" style="stroke-width: 1px; fill: none; stroke: #bf69a2; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,596.8251354533309C1048.125,596.8251354533309 1048.125,789.7075923250239 1195,789.7075923250239" style="stroke-width: 1px; fill: none; stroke: #bf6986; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,596.6525722672176C1048.125,596.6525722672176 1048.125,779.1292158999262 1195,779.1292158999262" style="stroke-width: 1px; fill: none; stroke: #bf6986; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,680.4342805028801C1048.125,680.4342805028801 1048.125,431.3798255162381 1195,431.3798255162381" style="stroke-width: 1px; fill: none; stroke: #bf69a2; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,595.1281568078031C1048.125,595.1281568078031 1048.125,731.2490986892907 1195,731.2490986892907" style="stroke-width: 1px; fill: none; stroke: #bf6986; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,411.6066977030245C1048.125,411.6066977030245 1048.125,767.2844639289768 1195,767.2844639289768" style="stroke-width: 1px; fill: none; stroke: #bf69bf; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,699.9691736472569C1048.125,699.9691736472569 1048.125,779.2425409773737 1195,779.2425409773737" style="stroke-width: 1px; fill: none; stroke: #bf69a2; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,595.207918989444C1048.125,595.207918989444 1048.125,757.1689657143908 1195,757.1689657143908" style="stroke-width: 1px; fill: none; stroke: #bf6986; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,699.9108208907587C1048.125,699.9108208907587 1048.125,757.2246624143863 1195,757.2246624143863" style="stroke-width: 1px; fill: none; stroke: #bf69a2; stroke-opacity: 0.4;"></path><path class="link" d="M5,699.971749217199C151.875,699.971749217199 151.875,519.5807066497996 298.75,519.5807066497996" style="stroke-width: 1px; fill: none; stroke: #bf6969; stroke-opacity: 0.4;"></path><path class="link" d="M901.25,595.1745975533195C1048.125,595.1745975533195 1048.125,744.9443171769981 1195,744.9443171769981" style="stroke-width: 1px; fill: none; stroke: #bf6986; stroke-opacity: 0.4;"></path><path class="link" d="M5,699.9853514459551C151.875,699.9853514459551 151.875,626.9782181163591 298.75,626.9782181163591" style="stroke-width: 1px; fill: none; stroke: #bf6969; stroke-opacity: 0.4;"></path><path class="link" d="M5,689.9573421228359C151.875,689.9573421228359 151.875,626.9711352990187 298.75,626.9711352990187" style="stroke-width: 1px; fill: none; stroke: #bfa269; stroke-opacity: 0.4;"></path><path class="link" d="M5,709.9948488601161C151.875,709.9948488601161 151.875,519.5928601204633 298.75,519.5928601204633" style="stroke-width: 1px; fill: none; stroke: #bfbf69; stroke-opacity: 0.4;"></path><path class="link" d="M5,699.9908245320818C151.875,699.9908245320818 151.875,699.9971024838153 298.75,699.9971024838153" style="stroke-width: 1px; fill: none; stroke: #bf6969; stroke-opacity: 0.4;"></path><path class="link" d="M5,689.9612859643097C151.875,689.9612859643097 151.875,699.9947683735554 298.75,699.9947683735554" style="stroke-width: 1px; fill: none; stroke: #bfa269; stroke-opacity: 0.4;"></path><path class="link" d="M5,719.999275620954C151.875,719.999275620954 151.875,519.5959990963302 298.75,519.5959990963302" style="stroke-width: 1px; fill: none; stroke: #86bf69; stroke-opacity: 0.4;"></path><path class="link" d="M5,709.9979073494223C151.875,709.9979073494223 151.875,699.9993561075146 298.75,699.9993561075146" style="stroke-width: 1px; fill: none; stroke: #bfbf69; stroke-opacity: 0.4;"></path></g><g><g class="node" transform="translate(1195,5.684341886080802e-14)"><rect height="122.22914468319657" width="5" style="fill: #666666;"><title>Arts &amp; Entertainment
+759,314</title></rect><text x="-6" y="61.11457234159828" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">Arts &amp; Entertainment</text></g><g class="node" transform="translate(1195,778.6507232966411)"><rect height="0.6226440334757483" width="5" style="fill: #666666;"><title>Automotive
+3,868</title></rect><text x="-6" y="0.31132201673787413" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">Automotive</text></g><g class="node" transform="translate(1195,631.6676870882352)"><rect height="12.392193802756859" width="5" style="fill: #666666;"><title>Business
+76,983</title></rect><text x="-6" y="6.1960969013784295" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">Business</text></g><g class="node" transform="translate(1195,754.9494683168821)"><rect height="2.3027205012591985" width="5" style="fill: #666666;"><title>Careers
+14,305</title></rect><text x="-6" y="1.1513602506295992" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">Careers</text></g><g class="node" transform="translate(1195,767.2521888181412)"><rect height="1.3985344784998193" width="5" style="fill: #666666;"><title>Education
+8,688</title></rect><text x="-6" y="0.6992672392499096" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">Education</text></g><g class="node" transform="translate(1195,694.4876919396321)"><rect height="6.799987566214073" width="5" style="fill: #666666;"><title>Family &amp; Parenting
+42,243</title></rect><text x="-6" y="3.3999937831070364" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">Family &amp; Parenting</text></g><g class="node" transform="translate(1195,559.0410387095952)"><rect height="17.288996154962717" width="5" style="fill: #666666;"><title>Food &amp; Drink
+107,403</title></rect><text x="-6" y="8.644498077481359" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">Food &amp; Drink</text></g><g class="node" transform="translate(1195,314.6017663747133)"><rect height="66.87306381252071" width="5" style="fill: #666666;"><title>Health &amp; Fitness
+415,430</title></rect><text x="-6" y="33.436531906260356" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">Health &amp; Fitness</text></g><g class="node" transform="translate(1195,227.30842949627078)"><rect height="77.29333687844253" width="5" style="fill: #666666;"><title>Hobbies &amp; Interests
+480,163</title></rect><text x="-6" y="38.646668439221266" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">Hobbies &amp; Interests</text></g><g class="node" transform="translate(1195,741.2903882949231)"><rect height="3.659080021958954" width="5" style="fill: #666666;"><title>Home &amp; Garden
+22,731</title></rect><text x="-6" y="1.829540010979477" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">Home &amp; Garden</text></g><g class="node" transform="translate(1195,609.0465895068841)"><rect height="12.621097581351098" width="5" style="fill: #666666;"><title>Law, Government &amp; Politics
+78,405</title></rect><text x="-6" y="6.310548790675549" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">Law, Government &amp; Politics</text></g><g class="node" transform="translate(1195,483.25274500802936)"><rect height="29.572211154549183" width="5" style="fill: #666666;"><title>News
+183,709</title></rect><text x="-6" y="14.786105577274592" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">News</text></g><g class="node" transform="translate(1195,586.330034864558)"><rect height="12.71655464232605" width="5" style="fill: #666666;"><title>Personal Finance
+78,998</title></rect><text x="-6" y="6.358277321163025" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">Personal Finance</text></g><g class="node" transform="translate(1195,711.2876795058462)"><rect height="5.150013072127615" width="5" style="fill: #666666;"><title>Pets
+31,993</title></rect><text x="-6" y="2.5750065360638077" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">Pets</text></g><g class="node" transform="translate(1195,799.7976567864329)"><rect height="0.20234321356748075" width="5" style="fill: #666666;"><title>Real Estate
+1,257</title></rect><text x="-6" y="0.10117160678374038" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">Real Estate</text></g><g class="node" transform="translate(1195,726.4376925779738)"><rect height="4.852695716949304" width="5" style="fill: #666666;"><title>Science
+30,146</title></rect><text x="-6" y="2.426347858474652" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">Science</text></g><g class="node" transform="translate(1195,674.401921019926)"><rect height="10.085770919706052" width="5" style="fill: #666666;"><title>Shopping
+62,655</title></rect><text x="-6" y="5.042885459853026" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">Shopping</text></g><g class="node" transform="translate(1195,441.44606595568365)"><rect height="31.806679052345682" width="5" style="fill: #666666;"><title>Social Media
+197,590</title></rect><text x="-6" y="15.903339526172841" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">Social Media</text></g><g class="node" transform="translate(1195,391.47483018723403)"><rect height="39.9712357684496" width="5" style="fill: #666666;"><title>Society
+248,310</title></rect><text x="-6" y="19.9856178842248" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">Society</text></g><g class="node" transform="translate(1195,132.22914468319664)"><rect height="85.07928481307412" width="5" style="fill: #666666;"><title>Sports
+528,531</title></rect><text x="-6" y="42.53964240653706" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">Sports</text></g><g class="node" transform="translate(1195,522.8249561625786)"><rect height="26.21608254701664" width="5" style="fill: #666666;"><title>Style &amp; Fashion
+162,860</title></rect><text x="-6" y="13.10804127350832" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">Style &amp; Fashion</text></g><g class="node" transform="translate(1195,654.0598808909921)"><rect height="10.342040128933919" width="5" style="fill: #666666;"><title>Technology &amp; Computing
+64,247</title></rect><text x="-6" y="5.171020064466959" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">Technology &amp; Computing</text></g><g class="node" transform="translate(1195,789.2733673301168)"><rect height="0.524289456316058" width="5" style="fill: #666666;"><title>Travel
+3,257</title></rect><text x="-6" y="0.262144728158029" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">Travel</text></g><g class="node" transform="translate(0,699.9620103433558)"><rect height="0.030423919939740543" width="5"><title>AU
+189</title></rect><text x="11" y="0.015211959969870271" dy=".35em" text-anchor="start" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">AU</text></g><g class="node" transform="translate(0,652.5874042418084)"><rect height="26.970724540019305" width="5"><title>CA
+167,548</title></rect><text x="11" y="13.485362270009652" dy=".35em" text-anchor="start" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">CA</text></g><g class="node" transform="translate(0,689.5581287818277)"><rect height="0.40388156152809007" width="5"><title>DE
+2,509</title></rect><text x="11" y="0.20194078076404504" dy=".35em" text-anchor="start" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">DE</text></g><g class="node" transform="translate(0,709.9924342632955)"><rect height="0.006116978612222966" width="5"><title>FR
+38</title></rect><text x="11" y="0.003058489306111483" dy=".35em" text-anchor="start" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">FR</text></g><g class="node" transform="translate(0,605.4805241950928)"><rect height="37.10688004671551" width="5"><title>GB
+230,516</title></rect><text x="11" y="18.553440023357755" dy=".35em" text-anchor="start" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">GB</text></g><g class="node" transform="translate(0,719.9985512419078)"><rect height="0.0014487580923685974" width="5"><title>IT
+9</title></rect><text x="11" y="0.0007243790461842987" dy=".35em" text-anchor="start" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">IT</text></g><g class="node" transform="translate(0,80)"><rect height="515.4805241950928" width="5"><title>US
+3,202,277</title></rect><text x="11" y="257.7402620975464" dy=".35em" text-anchor="start" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">US</text></g><g class="node" transform="translate(298.75,636.9820814712722)"><rect height="63.017918528727876" width="5"><title>Desktop
+391,481</title></rect><text x="11" y="31.508959264363938" dy=".35em" text-anchor="start" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">Desktop</text></g><g class="node" transform="translate(298.75,100)"><rect height="419.5967234753764" width="5"><title>Smartphone
+2,606,626</title></rect><text x="11" y="209.7983617376882" dy=".35em" text-anchor="start" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">Smartphone</text></g><g class="node" transform="translate(298.75,529.5967234753764)"><rect height="97.38535799589575" width="5"><title>Tablet
+604,979</title></rect><text x="11" y="48.69267899794787" dy=".35em" text-anchor="start" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">Tablet</text></g><g class="node" transform="translate(896.25,606.9151999147398)"><rect height="93.08480008526024" width="5"><title>multiple
+578,263</title></rect><text x="-6" y="46.54240004263012" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">multiple</text></g><g class="node" transform="translate(896.25,422.5814704395066)"><rect height="174.33372947523318" width="5"><title>multiple_manual
+1,082,999</title></rect><text x="-6" y="87.16686473761659" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">multiple_manual</text></g><g class="node" transform="translate(896.25,100)"><rect height="312.5814704395066" width="5"><title>single
+1,941,824</title></rect><text x="-6" y="156.2907352197533" dy=".35em" text-anchor="end" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">single</text></g><g class="node" transform="translate(597.5,504.52754666416513)"><rect height="117.54482685120477" width="5"><title>below the post
+730,214</title></rect><text x="11" y="58.77241342560239" dy=".35em" text-anchor="start" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">below the post</text></g><g class="node" transform="translate(597.5,709.6877121445339)"><rect height="0.31228785546611987" width="5"><title>gallery
+1,940</title></rect><text x="11" y="0.15614392773305993" dy=".35em" text-anchor="start" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">gallery</text></g><g class="node" transform="translate(597.5,90)"><rect height="404.52754666416513" width="5"><title>in-feed
+2,513,013</title></rect><text x="11" y="202.26377333208256" dy=".35em" text-anchor="start" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">in-feed</text></g><g class="node" transform="translate(597.5,632.0723735153699)"><rect height="49.229282898049064" width="5"><title>mid-post
+305,823</title></rect><text x="11" y="24.614641449024532" dy=".35em" text-anchor="start" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">mid-post</text></g><g class="node" transform="translate(597.5,691.301656413419)"><rect height="8.386055731114938" width="5"><title>other
+52,096</title></rect><text x="11" y="4.193027865557469" dy=".35em" text-anchor="start" style="font-size: 11px; font-family: Arial, Helvetica; pointer-events: none;">other</text></g></g></g></svg>
+
+          </div>
+          <!-- 
+<div class="chart-notes">
+            Make <a href="https://plot.ly/python/choropleth-maps/">choropleth maps, <a href="https://plot.ly/python/bubble-maps/">bubble maps</a>, and <a href="https://plot.ly/python/lines-on-maps/">lines on maps</a> in Python          
+          </div>
+ -->
+        </div>
+      </div>
+      <!-- 
+<div class="col-sm-6 col-md-4">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Cron Job Example
+          </div>
+          <div class="chart-stage">
+            <iframe width="100%" height="480px" frameborder="0" scrolling="no" src="https://plot.ly/~jackp/10010.embed"></iframe>
+          </div>
+          <div class="chart-notes">
+            This chart was updated every 30 minutes for 4 months with a <a href="">cron job</a>
+          </div>
+        </div>
+      </div>
+ -->
+      <!-- 
+<div class="col-sm-6 col-md-4">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Histogram Fit Example
+          </div>
+          <div class="chart-stage">
+            <iframe width="100%" height="480px" frameborder="0" scrolling="no" src="https://plot.ly/~jackp/10033.embed"></iframe>
+          </div>
+          <div class="chart-notes">
+            Make a <a href="https://plot.ly/python/histograms/">histogram</a> in Python
+          </div>
+        </div>
+      </div>
+ -->
+      <!-- end of three -->
+<!--     </div> -->
+
+    <div class="row">
+      <div class="col-sm-6 col-md-6">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Social Media Share and Engagement Rate in Different Devices
+          </div>
+          <div class="chart-stage">
+            <iframe width="100%" height="480px" frameborder="0" scrolling="no" src="https://plot.ly/~oliviac12/14/aggregate-socialmedia-shares-in-ten-thousands-vs-average-engagement-rate/.embed"></iframe>
+          </div>
+          <!-- 
+<div class="chart-notes">
+            Turn MySQL queries into <a href="http://moderndata.plot.ly/graph-data-from-mysql-database-in-python/">bubble charts</a> in Python
+          </div>
+ -->
+        </div>
+      </div>
+          <div class="col-sm-6 col-md-6">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Scatter Pairs between Social Media Share, Auto Play and Ten-seconds Play
+          </div>
+          <div class="chart-stage">
+            <iframe width="100%" height="480px" frameborder="0" scrolling="no" src="https://plot.ly/~oliviac12/44.embed"></iframe>
+          </div>
+          <!-- 
+<div class="chart-notes">
+            Turn MySQL queries into <a href="http://moderndata.plot.ly/graph-data-from-mysql-database-in-python/">bubble charts</a> in Python
+          </div>
+ -->
+        </div>
+    </div>
+<!-- 
+    <p class="small text-muted">
+      Built with a free dashboard template from <a href="http://keen.github.io/dashboards/">Keen IO</a> and seven <a href="https://plot.ly/python/embedding-plotly-graphs-in-HTML/">embedded Plotly graphs</a>
+    </p>
+    <p class="small text-muted">
+    This is a single static web page that can be displayed with any HTTP web server, offline as a HTML file, or on <a href="https://plot.ly/product/enterprise/">Plotly On-Premise</a>.
+    </p>
+ -->
+
+<!--   </div> -->
+
+  <!--<script type="text/javascript" src="../../assets/lib/jquery/dist/jquery.min.js"></script>-->
+  <!-- 
+<script type="text/javascript" src="static/js/slider/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="static/js/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="static/js/holderjs/holder.js"></script>
+  <script>
+ -->
+<!--     Holder.add_theme("white", { background:"#fff", foreground:"#a7a7a7", size:10 }); -->
+<!--   </script> -->
+
+  <!-- Slider widget files -->
+  <!-- 
+<script type="text/javascript" src="static/js/slider/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="static/js/slider/jQRangeSliderMouseTouch.js"></script>
+  <script type="text/javascript" src="static/js/slider/jQRangeSliderDraggable.js"></script>
+  <script type="text/javascript" src="static/js/slider/jQRangeSliderBar.js"></script>
+  <script type="text/javascript" src="static/js/slider/jQRangeSliderHandle.js"></script>
+  <script type="text/javascript" src="static/js/slider/jQRangeSliderLabel.js"></script>
+  <script type="text/javascript" src="static/js/slider/jQRangeSlider.js"></script>
+  <script type="text/javascript" src="static/js/slider/jQDateRangeSliderHandle.js"></script>  
+  <script type="text/javascript" src="static/js/slider/jQDateRangeSlider.js"></script>
+  <script type="text/javascript" src="static/js/slider/jQRuler.js"></script>
+  <script type="text/javascript" src="static/js/slider/slider.js"></script>
+ -->
+
+</body>
+</html>
